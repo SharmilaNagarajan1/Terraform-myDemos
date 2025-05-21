@@ -32,6 +32,10 @@ output "security_rules" {
   value = azurerm_network_security_group.nsg.security_rule
 }  
 
+output "demo" {
+  value = [ for count in local.nsg_rules : count.description ]
+}
+
 output "splat" {
   value = var.account_names[1]
 }
