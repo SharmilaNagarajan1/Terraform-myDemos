@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "rg" {
 
 # Create Network Security Group
 resource "azurerm_network_security_group" "example" {
-  name                = var.environment == "dev" ? "dev-nsg" : "stage-nsg"
+  name                = var.environment == "dev" ? "dev-nsg" : "stage-nsg" #conditional expression
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
