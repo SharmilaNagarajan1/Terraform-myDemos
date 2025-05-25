@@ -8,7 +8,7 @@ resource "azurerm_lb" "Internal-lb" {
     name                           = "int-fronend"
     subnet_id                      = azurerm_subnet.vm-subnet.id
     private_ip_address_allocation  = "Static"
-    private_ip_address             = "10.0.2.100"
+    private_ip_address             = "10.0.1.100"
 
   }
 }

@@ -3,9 +3,14 @@ variable "resource_group_name" {
     default = "demo_rg"
   }
 
+  variable "environment" {
+    type = string
+    default = "staging"
+  }
+
   variable "location" {
     type = string
-    default = "West Europe"
+    default = "eastus2"
   }
 
   variable "vnet_name" {
