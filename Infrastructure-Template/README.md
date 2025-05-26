@@ -8,10 +8,12 @@ A simple implementation of Azure infrastructure using Terraform. It includes an 
 Architecture Overview
  
 •	User hits the domain name of the  Application Gateway via internet.
+
 •	Based on the path/ URI of the URL Application gateway performs Path-based routing to App Services or to  the Load Balancer.
 /login → App Service 1
 /checkout/ → App Service 2
 /payment/ → Routed to Load Balancer instead of a direct App Service.
+
 •	Load Balancer distributes /payment/ traffic to VM1 or  VM2.
 
 What the Terraform Configuration Includes
