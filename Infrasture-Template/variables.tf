@@ -41,7 +41,5 @@ variable "resource_group_name" {
     default = "demo-pubic-ip"
   }
 
-  variable "load-balancer"{
-    default = "Internal-lb"
-  }
+ 
 
