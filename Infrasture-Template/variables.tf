@@ -37,12 +37,6 @@ variable "resource_group_name" {
     default = "demo-lb"
   }
 
-  variable "client_secret" {
-    type = string
-    default = "~Yh8Q~vHICqWmx.d4.YGa4D6jUusUuxwVCAvgceR"
-    sensitive = true 
-  }
-
   variable "public-ip" {
     default = "demo-pubic-ip"
   }

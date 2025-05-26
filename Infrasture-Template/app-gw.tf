@@ -36,7 +36,7 @@ resource "azurerm_application_gateway" "app-gw" {
 
        backend_address_pool {
     name            = "ilb-backend-pool"
-    ip_addresses    = ["10.0.1.100"]#Internal Load Balancer's private IP
+    ip_addresses    = ["10.0.2.100"]#Internal Load Balancer's private IP
     
   
   }
