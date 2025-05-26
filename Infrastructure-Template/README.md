@@ -1,4 +1,5 @@
 Implementation of Azure infrastructure using Terraform 
+
 A simple implementation of Azure infrastructure using Terraform. It includes an Application Gateway for public access to App Services (frontend) and an internal Load Balancer distributing traffic to backend VMs running containerized microservices.
 
 ![image](https://github.com/user-attachments/assets/6784d9a8-bbfc-4631-bbb6-0d58c8ab71d6)
@@ -46,6 +47,5 @@ o	Another subnet for VMs and internal Load Balancer.
 •	Subnets are defined with specific address ranges for clean segregation.
 •	Backend VMs are secured and accessible only via load balancer.
 ________________________________________
-Secrets and Variables
-•	Use Terraform Cloud, terraform.tfvars, or Azure Key Vault for secure management.
+
 
