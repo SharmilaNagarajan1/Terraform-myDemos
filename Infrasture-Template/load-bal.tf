@@ -13,7 +13,7 @@ resource "azurerm_lb" "Internal-lb" {
   }
 }
 
-resource "azurerm_lb_backend_address_pool" "example" {
+resource "azurerm_lb_backend_address_pool" "lb" {
   loadbalancer_id = azurerm_lb.Internal-lb.id
   name            = "BackEndAddressPool"
 }
