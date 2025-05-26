@@ -3,8 +3,8 @@
 resource "azurerm_network_interface" "nic" {
   count             = 2
   name                = "nic${count.index + 1}"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
 
   ip_configuration {
     name                          = "ipconfig1"
@@ -19,8 +19,8 @@ resource "azurerm_network_interface" "nic" {
 resource "azurerm_virtual_machine" "vm" {
   count                 = 2
   name                  = "vm-${count.index + 1}"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
+  location              = data.azurerm_resource_group.rg.location
+  resource_group_name   = data.azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.nic[count.index].id]
   vm_size               = "Standard_B1s"
 
@@ -51,4 +51,11 @@ resource "azurerm_virtual_machine" "vm" {
     disable_password_authentication = false
   }
 
+}
+
+resource "azurerm_network_interface_backend_address_pool_association" "nic_lb_association" {
+  count                     = 2
+  network_interface_id      = azurerm_network_interface.nic[count.index].id
+  ip_configuration_name     = "ipconfig1"
+  backend_address_pool_id   = azurerm_lb_backend_address_pool.lb.id
 }
