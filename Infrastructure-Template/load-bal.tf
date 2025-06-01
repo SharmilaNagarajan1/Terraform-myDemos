@@ -1,5 +1,5 @@
 resource "azurerm_lb" "Internal-lb" {
-  name                = var.load-balancer
+  name                = var.load-bal
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = "Standard"
